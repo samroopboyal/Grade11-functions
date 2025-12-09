@@ -1,5 +1,14 @@
 :root {
   --ink: #0f172a;
+  --muted: #4b5563;
+  --surface: #ffffff;
+  --border: #e5e7eb;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 72px 32px 96px;
   --muted: #475569;
   --surface: #ffffff;
   --border: #e2e8f0;
@@ -16,6 +25,7 @@
 
 .hero {
   text-align: center;
+  margin-bottom: 64px;
   margin-bottom: 56px;
 }
 
@@ -23,12 +33,42 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
+  color: #6b7280;
+  margin: 0 0 12px;
   color: #64748b;
   margin: 0 0 10px;
   font-size: 0.9rem;
 }
 
 .hero h1 {
+  margin: 0 0 16px;
+  font-size: clamp(32px, 4vw, 40px);
+}
+
+.subtitle {
+  margin: 0 auto;
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.unit-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px;
+}
+
+.unit-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 32px;
+}
+
+.unit-header h2 {
+  margin: 6px 0 12px;
+  font-size: 28px;
   margin: 0 0 14px;
   font-size: clamp(2rem, 4vw, 2.8rem);
 }
@@ -62,16 +102,22 @@
 .section-note {
   margin: 0;
   color: var(--muted);
+  font-size: 17px;
 }
 
 .unit-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
   gap: 16px;
 }
 
 .unit-card {
   display: block;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
   background: #f8fafc;
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -83,6 +129,26 @@
 
 .unit-card:hover,
 .unit-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: #d1d5db;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  outline: none;
+}
+
+.unit-meta {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #6b7280;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.unit-card h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.unit-card ul {
   transform: translateY(-4px);
   border-color: #cbd5e1;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
@@ -377,6 +443,9 @@
   padding-left: 18px;
   color: var(--muted);
   display: grid;
+  gap: 8px;
+  line-height: 1.5;
+  font-size: 16px;
   gap: 6px;
   line-height: 1.5;
 }
@@ -435,6 +504,11 @@
 
 @media (max-width: 640px) {
   .page {
+    padding: 56px 20px 72px;
+  }
+
+  .unit-section {
+    padding: 24px;
     padding: 48px 18px 72px;
   }
 

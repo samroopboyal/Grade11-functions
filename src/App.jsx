@@ -203,6 +203,33 @@ function App() {
           ))}
         </div>
       </section>
+        </p>
+      </header>
+
+      <section className="unit-section" aria-labelledby="units-title">
+        <div className="unit-header">
+          <p className="eyebrow">Unit roadmap</p>
+          <h2 id="units-title">Explore the seven units</h2>
+          <p className="section-note">
+            Use these cards as your quick table of contents. Each links to a focused unit
+            page so the homepage stays light and easy to scan.
+          </p>
+        </div>
+
+        <div className="unit-grid">
+          {units.map((unit, index) => (
+            <a className="unit-card" href={`/units/${unit.id}`} key={unit.id}>
+              <div className="unit-meta">Unit {index + 1}</div>
+              <h3>{unit.title}</h3>
+              <ul>
+                {unit.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
+            </a>
+          ))}
+        </div>
+      </section>
         <p className="eyebrow">Ontario Grade 11 Mathematics</p>
         <h1>Functions (MCR3U) Student Guide</h1>
         <p className="lede">
