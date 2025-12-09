@@ -35,6 +35,65 @@ const topics = [
   }
 ]
 
+const unitContents = [
+  {
+    unit: '1. Functions',
+    sections: [
+      'Terminology and notation: relations vs. functions, domain, range, restrictions',
+      'Evaluating and composing functions; working with inverses and one-to-one tests',
+      'Identifying even/odd behaviour and interpreting rates of change in context'
+    ]
+  },
+  {
+    unit: '2. Rational Expressions',
+    sections: [
+      'Factoring numerators/denominators and simplifying with restrictions stated',
+      'Adding, subtracting, multiplying, and dividing rational expressions accurately',
+      'Solving rational equations/inequalities and checking for extraneous solutions'
+    ]
+  },
+  {
+    unit: '3. Transformations',
+    sections: [
+      'Linking parameters a, k, d, c to stretches, reflections, and translations',
+      'Mapping key points from parent functions (linear, quadratic, reciprocal, root)',
+      'Writing equations from transformed graphs and describing changes in words'
+    ]
+  },
+  {
+    unit: '4. Exponential Functions',
+    sections: [
+      'Connecting initial value, base, and growth/decay factor to real scenarios',
+      'Graphing with asymptotes, restrictions, and interpreting percent change',
+      'Solving exponential equations using logarithms and change-of-base strategies'
+    ]
+  },
+  {
+    unit: '5. Trig Geometry',
+    sections: [
+      'Right-triangle trig ratios, special angles, and solving for missing sides/angles',
+      'Applying the sine law and cosine law, including ambiguous case awareness',
+      'Connecting triangle solutions to bearing, elevation/depression, and area problems'
+    ]
+  },
+  {
+    unit: '6. Trig Functions',
+    sections: [
+      'Graphing sine/cosine with amplitude, period, phase shift, and vertical shift',
+      'Relating unit-circle values to periodic behaviour and key points on graphs',
+      'Modelling oscillations (sound, tides, ferris wheels) and interpreting parameters'
+    ]
+  },
+  {
+    unit: '7. Discrete Functions',
+    sections: [
+      'Arithmetic and geometric sequences/series with recursive and explicit forms',
+      'Using sigma notation, partial sums, and financial applications like annuities',
+      'Comparing discrete vs. continuous models and choosing appropriate representations'
+    ]
+  }
+]
+
 const studyHabits = [
   'Sketch first: translate descriptions into graphs before using a calculator.',
   'Check units and scales on every graph so your interpretations stay realistic.',
@@ -55,10 +114,38 @@ function App() {
           work through lessons, assignments, and exam review.
         </p>
         <div className="cta-row">
+          <a className="button primary" href="#units">See unit table</a>
+          <a className="button ghost" href="#topics">Explore topics</a>
           <a className="button primary" href="#topics">Explore topics</a>
           <a className="button ghost" href="#study-habits">Study habits</a>
         </div>
       </header>
+
+      <section className="units" id="units">
+        <div className="section-header">
+          <p className="eyebrow">Unit roadmap</p>
+          <h2>Table of contents by unit</h2>
+          <p className="lede">
+            Scan the unit summaries below to see how lessons connect. Use them as
+            bookmarks for your notes or to plan weekly study goals.
+          </p>
+        </div>
+        <div className="unit-grid">
+          {unitContents.map((unit) => (
+            <article className="unit-card" key={unit.unit}>
+              <div className="unit-title-row">
+                <span className="unit-badge">{unit.unit.split('.')[0]}</span>
+                <h3>{unit.unit}</h3>
+              </div>
+              <ul>
+                {unit.sections.map((section) => (
+                  <li key={section}>{section}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section className="grid" id="overview">
         <div className="card">
