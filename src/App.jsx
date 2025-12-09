@@ -116,6 +116,7 @@ function App() {
         <div className="cta-row">
           <a className="button primary" href="#units">See unit table</a>
           <a className="button ghost" href="#topics">Explore topics</a>
+          <a className="button primary" href="#topics">Explore topics</a>
           <a className="button ghost" href="#study-habits">Study habits</a>
         </div>
       </header>
