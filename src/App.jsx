@@ -35,49 +35,6 @@ const topics = [
   }
 ]
 
-const unitContents = [
-  {
-    unit: '1. Functions Toolkit',
-    sections: [
-      'Terminology: relation vs. function, domain, range, restrictions',
-      'Evaluating functions and using function notation accurately',
-      'Inverse relationships and verifying with mapping diagrams'
-    ]
-  },
-  {
-    unit: '2. Linear and Quadratic Models',
-    sections: [
-      'Slope, rate of change, and line of best fit',
-      'Quadratic forms (standard, vertex, factored) and key features',
-      'Transformations and completing the square to rewrite equations'
-    ]
-  },
-  {
-    unit: '3. Exponential Functions',
-    sections: [
-      'Growth and decay scenarios with initial value and base interpretation',
-      'Graph shapes, horizontal asymptotes, and restrictions',
-      'Solving equations using logarithms and change of base'
-    ]
-  },
-  {
-    unit: '4. Trigonometric Connections',
-    sections: [
-      'Unit circle links to sine and cosine values',
-      'Amplitude, period, midline, and phase shift in graphing sinusoids',
-      'Applications with angles of elevation/depression and navigation contexts'
-    ]
-  },
-  {
-    unit: '5. Data and Modelling Projects',
-    sections: [
-      'Choosing an appropriate model (linear, quadratic, exponential, sinusoidal)',
-      'Using residuals and limitations to justify model choice',
-      'Communicating results with clear graphs, units, and interpretation'
-    ]
-  }
-]
-
 const studyHabits = [
   'Sketch first: translate descriptions into graphs before using a calculator.',
   'Check units and scales on every graph so your interpretations stay realistic.',
@@ -98,37 +55,10 @@ function App() {
           work through lessons, assignments, and exam review.
         </p>
         <div className="cta-row">
-          <a className="button primary" href="#units">See unit table</a>
-          <a className="button ghost" href="#topics">Explore topics</a>
+          <a className="button primary" href="#topics">Explore topics</a>
           <a className="button ghost" href="#study-habits">Study habits</a>
         </div>
       </header>
-
-      <section className="units" id="units">
-        <div className="section-header">
-          <p className="eyebrow">Unit roadmap</p>
-          <h2>Table of contents by unit</h2>
-          <p className="lede">
-            Scan the unit summaries below to see how lessons connect. Use them as
-            bookmarks for your notes or to plan weekly study goals.
-          </p>
-        </div>
-        <div className="unit-grid">
-          {unitContents.map((unit) => (
-            <article className="unit-card" key={unit.unit}>
-              <div className="unit-title-row">
-                <span className="unit-badge">{unit.unit.split('.')[0]}</span>
-                <h3>{unit.unit}</h3>
-              </div>
-              <ul>
-                {unit.sections.map((section) => (
-                  <li key={section}>{section}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
 
       <section className="grid" id="overview">
         <div className="card">
