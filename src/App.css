@@ -126,6 +126,7 @@
 
 .units {
   margin: 52px 0 58px;
+  scroll-margin-top: 24px;
 }
 
 .unit-grid {
